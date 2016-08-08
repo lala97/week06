@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	
+	body{
+		background: url(img/pattern.png);
+	}
+		#circle{
+			width: 450px;
+			height: 450px;
+			background: url(img/wheel_main_EN.png);
+			background-size: cover;
+			margin:100px auto;
+			position: relative;
+
+
+		}
+		#pointer{
+			width: 63px;
+            height: 37px;
+			background-image: url(img/pointer.png);
+			float: right;
+			position: absolute;
+			left: 56em;
+            top: 19em; 
+		}
+	    #spin{
+			background-image: url(img/spin_EN.png);
+			height: 13em;
+		    width: 13em;
+		    background-size: cover;
+		    cursor: pointer;
+		    position: absolute;
+		    left: 69em;
+           top: 3em;
+           color:white;
+		}
+		p{
+			display: inline-block;
+		    margin: 93px auto;
+		    margin-left: 51px;
+		    font-size: 15px;
+		    font-weight: 900;
+		}
+		
+		#table{
+			background-image: url(img/table.png);
+			width: 14.7em;
+		    height: 8em;
+		    position: absolute;
+		    top: 1em;
+		    color:white;
+		}
+
+
+		#table img{
+			margin-top: 50px;
+    		margin-left: 18px;
+			width: 1.3em;
+			display: inline-block;
+
+		}
+
+	</style>
+</head>
+<body>
+    <div id="circle"></div>
+	<div id="pointer"></div>
+	<div id="spin"  onmouseout="spinBack()"><p>FOR 15 COINS</p></div>
+	<div id="table">
+		<img src="img/coins.png">
+	</div>
+<script type="text/javascript">
+
+  document.getElementById("spin").addEventListener("click",spinHover);
+
+
+  
+  	var coins=100;
+ //  	var text=document.createTextNode('Your have coins'+coins);
+	// document.getElementById('table').appendChild(text);
+	function spinHover () {
+		
+		var count =Math.floor((Math.random()*100));
+
+		document.getElementById('spin').style.backgroundImage="url(img/spin_hover_EN.png)";
+		console.log(count);
+		console.log(document.getElementById('circle').style.webkitTransform = 'rotate('+18*count+'deg)');
+		document.getElementById('circle').style.transition='all 2s ease';
+
+		if(count%2==1){
+			setTimeout(function() {
+				
+				alert('YOU LOSE :( ');
+			},3000)
+				
+			   }
+
+			   if((count%20!=0)&&(count%6!=0)&&(count%12!=0)&&(count%16!=0)){
+			setTimeout(function() {
+				
+				alert('YOU EARN YOUR CREDIST BACK :)');
+			},3000)
+			 	
+			   }
+
+			    if(count%20==0){
+			setTimeout(function() {
+				alert('YOU WIN GIFT!!!');
+			},3000)
+
+			   }
+			   else {
+
+			    if((count%6==0)||(count%12==0)||(count%16==0)){
+			setTimeout(function() {
+				alert('YOU EARN YOUR TWICE CREDIST BACK');
+			},3000)
+			
+				
+			   }
+			}
+
+       
+		
+	}
+
+	
+	function spinBack () {
+		document.getElementById('spin').style.backgroundImage="url(img/spin_EN.png)";
+	}
+
+	
+
+	
+	
+	
+	
+
+</script>
+</body>
+</html>

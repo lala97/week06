@@ -1,0 +1,53 @@
+.main {
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: url("../../img/analog-clock.png") no-repeat -12px 1px;
+  /* overflow: hidden; */
+  margin: 0 auto;
+  box-shadow: 0px 0px 20px gray;
+  z-index: 1; }
+  .main .circle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: black;
+    position: relative;
+    top: 292px;
+    left: 290px;
+    z-index: 5; }
+  .main .saniye {
+    width: 3.5px;
+    height: 276px;
+    background: red;
+    border-radius: 50%;
+    position: relative;
+    top: 8px;
+    left: 295px;
+    z-index: 2;
+    transform-origin: 50% 100%;
+    box-shadow: 4px -1px 6px brown; }
+  .main .deg {
+    width: 5.6px;
+    height: 226px;
+    background: brown;
+    border-radius: 50%;
+    position: relative;
+    top: -218px;
+    left: 295px;
+    transform-origin: 50% 100%;
+    box-shadow: 4px -1px 6px gray;
+    z-index: 3; }
+  .main .saat {
+    width: 5px;
+    height: 172px;
+    background: black;
+    border-radius: 50%;
+    position: relative;
+    top: -389px;
+    left: 295px;
+    transform-origin: 50% 100%;
+    box-shadow: 4px -1px 5px black;
+    z-index: 4; }
+
+/*# sourceMappingURL=style.css.map */
