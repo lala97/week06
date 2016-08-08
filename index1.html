@@ -14,6 +14,7 @@
 			background-size: cover;
 			margin:100px auto;
 			position: relative;
+			transition: all 1s ease;
 
 
 		}
@@ -88,57 +89,39 @@
 		document.getElementById('spin').style.backgroundImage="url(img/spin_hover_EN.png)";
 		console.log(count);
 		console.log(document.getElementById('circle').style.webkitTransform = 'rotate('+18*count+'deg)');
-		document.getElementById('circle').style.transition='all 2s ease';
+		
+			count1=count%20;
+			console.log(count1);
 
-		if(count%2==1){
-			setTimeout(function() {
-				
+			if (count1%2!=0) {
+				setTimeout(function() {
 				alert('YOU LOSE :( ');
-			},3000)
+			},2000)
 				
-			   }
-
-			   if((count%20!=0)&&(count%6!=0)&&(count%12!=0)&&(count%16!=0)){
-			setTimeout(function() {
-				
-				alert('YOU EARN YOUR CREDIST BACK :)');
-			},3000)
-			 	
-			   }
-
-			    if(count%20==0){
-			setTimeout(function() {
-				alert('YOU WIN GIFT!!!');
-			},3000)
-
-			   }
-			   else {
-
-			    if((count%6==0)||(count%12==0)||(count%16==0)){
-			setTimeout(function() {
-				alert('YOU EARN YOUR TWICE CREDIST BACK');
-			},3000)
-			
-				
-			   }
 			}
 
-       
-		
-	}
+			if ((count1==6) || (count1==12) || (count1==16)) {
+				setTimeout(function() {
+				alert('YOU EARN YOUR TWICE CREDIST BACK');
+			},2000)
+			}
 
-	
-	function spinBack () {
+			if (count1==0) {
+				setTimeout(function() {
+				alert('YOU WIN GIFT!!!');
+			},2000)
+			}
+
+			else if ((count1==2) || (count1==4) || (count1==8)||(count1==10) || (count1==14) || (count1==18)){
+				setTimeout(function() {
+				alert('YOU EARN YOUR  CREDIST BACK');
+			},2000)
+			}
+		}
+
+		function spinBack() {
 		document.getElementById('spin').style.backgroundImage="url(img/spin_EN.png)";
 	}
-
-	
-
-	
-	
-	
-	
-
 </script>
 </body>
 </html>
